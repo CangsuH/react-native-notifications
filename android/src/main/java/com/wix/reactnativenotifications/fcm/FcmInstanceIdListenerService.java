@@ -4,7 +4,7 @@ import android.content.Intent;
 
 import com.google.firebase.messaging.FirebaseMessagingService;;
 
-public class FcmInstanceIdListenerService extends FirebaseInstanceIdService {
+public class FcmInstanceIdListenerService extends FirebaseMessagingService {
 
     @Override
     public void onTokenRefresh() {

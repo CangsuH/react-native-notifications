@@ -2,7 +2,7 @@ package com.wix.reactnativenotifications.fcm;
 
 import android.content.Intent;
 
-import com.google.firebase.iid.FirebaseInstanceIdService;
+import com.google.firebase.messaging.FirebaseMessagingService;;
 
 public class FcmInstanceIdListenerService extends FirebaseInstanceIdService {
 

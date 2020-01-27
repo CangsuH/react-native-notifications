@@ -96,6 +96,11 @@ public class RNNotificationsModule extends ReactContextBaseJavaModule implements
         promise.resolve(new Boolean(hasPermission));
     }
 
+    @ReactMethod void removeAllDeliveredNotifications() {
+        IPushNotificationsDrawer notificationdrawer = PushNotificationsDrawer.get(getReactApplicationContext().getApplicationContext());
+        notificationsDrawer.onAllNotificationsClearRequest();
+    }
+
     @Override
     public void onAppVisible() {
         final IPushNotificationsDrawer notificationsDrawer = PushNotificationsDrawer.get(getReactApplicationContext().getApplicationContext());

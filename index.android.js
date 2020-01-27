@@ -1,4 +1,4 @@
-import {NativeModules, DeviceEventEmitter} from "react-native";
+import { NativeModules, DeviceEventEmitter } from "react-native";
 import NotificationAndroid from "./notification";
 
 const RNNotifications = NativeModules.WixRNNotifications;
@@ -57,6 +57,10 @@ export class NotificationsAndroid {
 
   static cancelLocalNotification(id) {
     RNNotifications.cancelLocalNotification(id);
+  }
+
+  static removeAllDeliveredNotifications() {
+    RNNotifications.removeAllDeliveredNotifications();
   }
 }
 

@@ -124,9 +124,10 @@ public class LocalNotification implements ILocalNotification {
     }
 
     protected PendingIntent createOnOpenedIntent(int id) {
-        final Intent serviceIntent = new Intent(mContext, LocalNotificationService.class);
-        serviceIntent.putExtra(LocalNotificationService.EXTRA_NOTIFICATION, mNotificationProps.asBundle());
-        return PendingIntent.getService(mContext, id, serviceIntent, PendingIntent.FLAG_IMMUTABLE);
+        Intent launchIntent = new Intent(mContext, TransparentNotificationActivity.class);
+        launchIntent.putExtra(LocalNotificationService.EXTRA_NOTIFICATION, mNotificationProps.asBundle());
+        launchIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return PendingIntent.getActivity(mContext, id, launchIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
     }
 
     protected Notification.Builder getNotificationBuilder(PendingIntent intent) {

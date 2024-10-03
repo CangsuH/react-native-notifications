@@ -8,6 +8,13 @@
 
     <application>
 
+        <activity
+            android:name=".TransparentNotificationActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:launchMode="singleTask"
+            android:excludeFromRecents="true"
+            android:exported="true" />
+
         <!--
          A proxy-service that gives the library an opportunity to do some work before launching/resuming the actual application task.
          -->
